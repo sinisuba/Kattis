@@ -31,6 +31,7 @@ int main()
                     ++cnt_cars;
                 if (niz[i + 1][j + 1] == 'X')
                     ++cnt_cars;
+				
                 ++cnt[cnt_cars];
             }
         }
