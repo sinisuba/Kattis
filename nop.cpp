@@ -7,29 +7,24 @@ int main()
 
     int n = str.length();
 
-    if (n < 2)
-        std::cout << 0;
-    else
+    int ans = 0;
+
+    for (int i = 1; i < n; ++i)
     {
-        int ans = 0;
+        int cnt_lower = 0;
 
-        for (int i = 1; i < n; ++i)
+        while (i < n && str[i] >= 'a' && str[i] <= 'z')
         {
-            int cnt_lower = 0;
-
-            while (i < n && str[i] >= 'a' && str[i] <= 'z')
-            {
-                ++cnt_lower;
-                ++i;
-            }
-
-            while (i < n && (cnt_lower + 1) % 4 != 0)
-            {
-                ++ans;
-                ++cnt_lower;
-            }
+            ++cnt_lower;
+            ++i;
         }
 
-        std::cout << ans << std::endl;
+        while (i < n && (cnt_lower + 1) % 4 != 0)
+        {
+            ++ans;
+            ++cnt_lower;
+        }
     }
+
+    std::cout << ans << std::endl;
 }
