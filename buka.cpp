@@ -58,19 +58,9 @@ int main()
                 if (a[i] == '0')
                     ++cnt;
 
-            if (a == b)
-            {
-                std::cout << '2';
+            b[b.size() - 1 - cnt] = '1';
 
-                while (cnt--)
-                    std::cout << '0';
-            }
-            else
-            {
-                b[b.size() - 1 - cnt] = '1';
-
-                std::cout << b;
-            }
+            std::cout << b;
         }
     }
 }
